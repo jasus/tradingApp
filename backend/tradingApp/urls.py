@@ -14,8 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
+from rest_framework import routers
 from django.contrib import admin
+
+from trading.api import CurrencyViewSet, TradeViewSet
+
+router = routers.DefaultRouter()
+router.register(r'currencies', CurrencyViewSet)
+router.register(r'trades', TradeViewSet)
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^api/', include(router.urls))
 ]
