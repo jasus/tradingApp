@@ -1,0 +1,25 @@
+.new-trade-container{
+    margin-top: 50px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.arrow-spacing{
+    padding: 0 5px 0 5px;
+}
+
+.rate{
+    p:first-child{
+        margin-top: 0;
+    }
+
+    p:last-child{
+        margin-bottom: 0;
+    }
+}
+
+.cancel-button{
+    float: right;
+}

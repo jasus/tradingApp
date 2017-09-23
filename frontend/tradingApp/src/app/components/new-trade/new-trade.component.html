@@ -1,3 +1,52 @@
-<p>
-  new-trade works!
-</p>
+<div class="new-trade-container">
+  <div class="row">
+    <div class="input-field col s4">
+      <select materialize="material_select" [materializeSelectOptions]="selectOptions">
+          <option [value]="" disabled selected>Choose your option</option>
+        <option *ngFor="let option of selectOptions" [value]="option.value">{{option.name}}</option>
+      </select>
+      <label>Sell currency</label>
+    </div>
+
+    <div class="rate col s4">
+        <p class="text-center">Rate</p>
+        <p class="text-center">
+          <strong class="arrow-spacing">></strong> {{ trade.rate }} <strong class="arrow-spacing">></strong> 
+        </p>
+    </div>
+
+    <div class="input-field col s4">
+        <select materialize="material_select" [materializeSelectOptions]="selectOptions">
+            <option [value]="" disabled selected>Choose your option</option>
+          <option *ngFor="let option of selectOptions" [value]="option.value">{{option.name}}</option>
+        </select>
+        <label>Buy currency</label>
+    </div>
+  </div>
+  <div class="row">
+      <div class="input-field col s4">
+        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+        <label for="first_name">Sell amount</label>
+      </div>
+  
+      <div class="col s4">
+      </div>
+  
+      <div class="input-field col s4">
+        <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+        <label for="disabled">Buy amount</label>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col s4">
+        <a class="new-trade-button waves-effect waves-light btn">Create</a>
+      </div>
+  
+      <div class="col s4">
+      </div>
+  
+      <div class="col s4">
+        <a class="cancel-button waves-effect waves-light btn">Cancel</a>
+      </div>
+  </div>
+</div>

@@ -1,3 +1,25 @@
-<p>
-  trades works!
-</p>
+
+<a class="new-trade-button waves-effect waves-light btn" [routerLink]="['/new-trade']">New trade</a>
+
+<table class="trades-table striped">
+  <thead>
+    <tr>
+      <th>Sell CCY</th>
+      <th>Sell Amount</th>
+      <th>Buy CCY</th>
+      <th>Buy Amount</th>
+      <th>Rate</th>
+      <th>Date Booked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let trade of trades">
+        <th scope="row">{{ trade.sell_currency }}</th>
+        <th>{{ trade.sell_amount }}</th>
+        <th>{{trade.buy_currency }}</th>
+        <th>{{ trade.buy_amount }}</th>
+        <th>{{ trade.rate }}</th>
+        <th>{{ trade.date_booked | date: 'dd/MM/yyyy HH:mm'}}</th>
+    </tr>
+  </tbody>
+</table>
